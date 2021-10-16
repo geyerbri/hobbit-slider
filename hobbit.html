@@ -115,10 +115,19 @@
 		<!-- Map Section -->
 		<div id="memap"></div>
 
+
+
+
 		<!-- Bootstrap core JavaScript -->
 		<script src="vendor/jquery/jquery.js"></script>
 		<script src="vendor/popper/popper.js"></script>
 		<script src="vendor/bootstrap/js/bootstrap.js"></script>
+
+		<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
+
+        <!--jQuery UI Touch js, required for touchscreen use-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
 
 		<!-- Plugin JavaScript -->
 		<script src="vendor/jquery-easing/jquery.easing.js"></script>
@@ -129,6 +138,7 @@
 		<!-- Leaflet and Plugins Scripts -->
 		<script src="leaflet/leaflet.js"></script>
 		<script src="leaflet/L.control.mousePosition.js"></script>
+		<script src="js/SliderControl.js"></script>
 
 		<!-- Initiates Modal and Uses cookies for Dont Show Again Checkbox -->
 		<script type="text/javascript">
@@ -198,10 +208,8 @@
 				'Map Tile Imagery &copy; <a alt="Iron Crown Enterprise" href="http://ironcrown.com/middle-earth-role-playing/">Iron Crown Enterprises</a> | <a alt="Creative Commons" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a> | Compiled with <a alt="Mapbox" href="https://www.mapbox.com/" target="_blank">Mapbox Style Editor</a>'
 			).addTo(memap);
 //			L.imageOverlay(keyUrl, keyLocation).addTo(memap);
-			var locations = L.geoJSON(geoJSON).addTo(memap);
 
 			//add line points
-
 			var	pointA = new L.LatLng(6.90219, -12.27448),
 				pointB = new L.LatLng(7.20203, -10.12249),
 				pointC = new L.LatLng(7.1775, -9.46472),
@@ -228,30 +236,195 @@
 				point13 = new L.LatLng(6.52849, -13.24402);
 
 			//add PointLine arrays
-			var	numericalPointList = [point1, point2, point3, point4, point5, point6, point7, point8, point9, point10, point11, point12, point13],
-				alphaPointList = [pointA, pointB, pointC, pointD, pointE, pointF, pointG, pointH, pointI, pointJ, pointK];
+			var	numerical1 = [point1, point2],
+				numerical2 = [point2, point3],
+				numerical3 = [point3, point4],
+				numerical4 = [point4, point5],
+				numerical5 = [point5, point6],
+				numerical6 = [point6, point7],
+				numerical7 = [point7, point8],
+				numerical8 = [point8, point9],
+				numerical9 = [point9, point10],
+				numerical10 = [point10, point11],
+				numerical11 = [point11, point12],
+				numerical12 = [point12, point13],
+				alpha1 = [pointA, pointB],
+				alpha2 = [pointB, pointC],
+				alpha3 = [pointC, pointD],
+				alpha4 = [pointD, pointE],
+				alpha5 = [pointE, pointF],
+				alpha6 = [pointF, pointG],
+				alpha7 = [pointG, pointH],
+				alpha8 = [pointH, pointI],
+				alpha9 = pointI, pointJ],
+				alpha10 = [pointJ, pointK];
+				alpha11 = [pointk, pointA];
 
 			//create PolyLines
-			var	alphaPolyline = new L.Polyline(alphaPointList, {
+			var	numberLine1 = new L.Polyline(numerical1, {
 					color: '#ff2727',
 					weight: 3,
 					opacity: 1,
-					smoothFactor: 1
+					smoothFactor: 1,
+					time: "02"
 				}),
-				numericalPolyline = new L.Polyline(numericalPointList, {
+				numberLine2 = new L.Polyline(numerical2, {
+					color: '#ff2727',
+					weight: 3,
+					opacity: 1,
+					smoothFactor: 1,
+					time: "03"
+				}),
+				numberLine3 = new L.Polyline(numerical3, {
+					color: '#ff2727',
+					weight: 3,
+					opacity: 1,
+					smoothFactor: 1,
+					time: "04"
+				}),
+				numberLine4 = new L.Polyline(numerical4, {
+					color: '#ff2727',
+					weight: 3,
+					opacity: 1,
+					smoothFactor: 1,
+					time: "04"
+				}),
+				numberLine5 = new L.Polyline(numerical5, {
+					color: '#ff2727',
+					weight: 3,
+					opacity: 1,
+					smoothFactor: 1,
+					time: "05"
+				}),
+				numberLine6 = new L.Polyline(numerical6, {
+					color: '#ff2727',
+					weight: 3,
+					opacity: 1,
+					smoothFactor: 1,
+					time: "06"
+				}),
+				numberLine7 = new L.Polyline(numerical7, {
+					color: '#ff2727',
+					weight: 3,
+					opacity: 1,
+					smoothFactor: 1,
+					time: "07"
+				}),
+				numberLine8 = new L.Polyline(numerical8, {
+					color: '#ff2727',
+					weight: 3,
+					opacity: 1,
+					smoothFactor: 1,
+					time: "08"
+				}),
+				numberLine9 = new L.Polyline(numerical9, {
+					color: '#ff2727',
+					weight: 3,
+					opacity: 1,
+					smoothFactor: 1,
+					time: "09"
+				}),
+				numberLine10 = new L.Polyline(numerical10, {
+					color: '#ff2727',
+					weight: 3,
+					opacity: 1,
+					smoothFactor: 1,
+					time: "10"
+				}),
+				numberLine11 = new L.Polyline(numerical11, {
+					color: '#ff2727',
+					weight: 3,
+					opacity: 1,
+					smoothFactor: 1,
+					time: "11"
+				}),
+				numberLine12 = new L.Polyline(numerical12, {
+					color: '#ff2727',
+					weight: 3,
+					opacity: 1,
+					smoothFactor: 1,
+					time: "12"
+				}),
+				alphaLine1 = new L.Polyline(alpha1, {
 					color: '#2727ff',
 					weight: 3,
 					opacity: 1,
-					smoothFactor: 1
+					smoothFactor: 1,
+					time: "02"
+				}),
+				alphaLine2 = new L.Polyline(alpha2, {
+					color: '#2727ff',
+					weight: 3,
+					opacity: 1,
+					smoothFactor: 1,
+					time: "03"
+				}),
+				alphaLine3 = new L.Polyline(alpha3, {
+					color: '#2727ff',
+					weight: 3,
+					opacity: 1,
+					smoothFactor: 1,
+					time: "04"
+				}),
+				alphaLine4 = new L.Polyline(alpha4, {
+					color: '#2727ff',
+					weight: 3,
+					opacity: 1,
+					smoothFactor: 1,
+					time: "05"
+				}),
+				alphaLine5 = new L.Polyline(alpha5, {
+					color: '#2727ff',
+					weight: 3,
+					opacity: 1,
+					smoothFactor: 1,
+					time: "06"
+				}),
+				alphaLine6 = new L.Polyline(alpha6, {
+					color: '#2727ff',
+					weight: 3,
+					opacity: 1,
+					smoothFactor: 1,
+					time: "07"
+				}),
+				alphaLine7 = new L.Polyline(alpha7, {
+					color: '#2727ff',
+					weight: 3,
+					opacity: 1,
+					smoothFactor: 1,
+					time: "08"
+				}),
+				alphaLine8 = new L.Polyline(alpha8, {
+					color: '#2727ff',
+					weight: 3,
+					opacity: 1,
+					smoothFactor: 1,
+					time: "09"
+				}),
+				alphaLine9 = new L.Polyline(alpha9, {
+					color: '#2727ff',
+					weight: 3,
+					opacity: 1,
+					smoothFactor: 1,
+					time: "10"
+				}),
+				alphaLine10 = new L.Polyline(alpha10, {
+					color: '#2727ff',
+					weight: 3,
+					opacity: 1,
+					smoothFactor: 1,
+					time: "11"
+				}),
+				alphaLine11 = new L.Polyline(alpha11, {
+					color: '#2727ff',
+					weight: 3,
+					opacity: 1,
+					smoothFactor: 1,
+					time: "12"
 				});
 
-			//add PolyLines
-			alphaPolyline.addTo(memap);
-			numericalPolyline.addTo(memap);
-
-
 			//add pins
-			var geoJSON = [
+			var events = [
 				{
 					type: 'Feature',
 					geometry: {
@@ -260,6 +433,7 @@
 					},
 					properties: {
 						title: 'Troll Encounter',
+						time: "02",
 						description: 'When Bilbo&#39;s companions are captured by hungry trolls, Bilbo distracts the trolls until daylight breaks and the trolls are turned into stone',
 						url: 'http://lotr.wikia.com/wiki/Stone-trolls',
 						image: 'img/loc-img/the-trolls.jpg',
@@ -284,6 +458,7 @@
 					properties: {
 						title: 'Thorin&#39;s Company at Rivendell',
 						description: 'Bilbo, Gandalf, and Thorin&#39;s company of dwarves are hosted by Elrond at Rivendell',
+						time: '03',
 						url: 'http://lotr.wikia.com/wiki/Rivendell',
 						image: 'img/loc-img/rivendell.jpg',
 						icon: {
@@ -329,6 +504,7 @@
 					},
 					properties: {
 						title: 'Misty Mountains',
+						time: '04',
 						description: 'Gandalf, Bilbo, and the dwarves cross the mountains by the High Pass. Bilbo gets lost, meets Gollum, and accidentally discovers the Ring',
 						image: 'img/loc-img/misty-mountains.jpg',
 						url: 'http://lotr.wikia.com/wiki/Misty_Mountains',
@@ -375,6 +551,7 @@
 					},
 					properties: {
 						title: 'Mirkwood',
+						time: '05',
 						description: 'Bilbo and the dwarves try to travel through the forest undetected, but are captured by elves',
 						image: 'img/loc-img/mirkwood.jpg',
 						url: 'http://lotr.wikia.com/wiki/Mirkwood',
@@ -398,6 +575,7 @@
 					},
 					properties: {
 						title: 'Thranduil&#39;s Hall',
+						time: '06',
 						description: 'Thorin and the dwarves enjoy the elven king Thranduil&#39;s hospitality, but from behind bars',
 						image: 'img/loc-img/thranduil.jpg',
 						url: 'http://lotr.wikia.com/wiki/Thranduil',
@@ -421,6 +599,7 @@
 					},
 					properties: {
 						title: 'Barrel Ride',
+						time: '07',
 						description: 'Tired of Thranduil&#39;s enforced hospitality, Bilbo and the dwarves use the Ring to escape Thranduil&#39;s Hall in barrels on the river',
 						image: 'img/loc-img/barrel-ride.jpg',
 						url: 'http://lotr.wikia.com/wiki/Barrels_Out_Of_Bond',
@@ -444,6 +623,7 @@
 					},
 					properties: {
 						title: 'Lake-town',
+						time: '08',
 						description: 'Also called Esgaroth. Seems like a great place, but gets destroyed by a dragon',
 						image: 'img/loc-img/lake-town.jpg',
 						url: 'http://lotr.wikia.com/wiki/Lake-town',
@@ -467,6 +647,7 @@
 					},
 					properties: {
 						title: 'Lonely Mountain',
+						time: '09',
 						description: 'Once thriving Kingdom Under the Mountain of the Dwarves, desolated by the wyrm Smaug. It has now been reclaimed by Thorin I and thrives once again, resumming their alliances with man and elves.',
 						url:'https://en.wikipedia.org/wiki/Lonely_Mountain',
 						image: 'img/loc-img/The_lonely_mountain.jpg',
@@ -490,6 +671,7 @@
 					},
 					properties: {
 						title: 'Beorn&#39;s Hall',
+						time: '10',
 						description: 'Home of the shapechanger Beorn where Bilbo and company escape from the goblins and wargs. From here, they enter Mirkwood and on Bilbo&#39;s return, he and Gandolf winter with Beorn.',
 						url:'http://tolkiengateway.net/wiki/Beorn%27s_Hall',
 						image: 'img/loc-img/Beorns-Hall.jpg',
@@ -720,6 +902,7 @@
 					},
 					properties: {
 						title: 'Bag End',
+						time: '01',
 						description: 'Bilbo Baggins&#39; hobbit hole is comfortable and tidy, until Gandalf invites a group of dwarves for dinner',
 						url: 'http://lotr.wikia.com/wiki/Bag_End',
 						image: 'img/loc-img/bag-end.png',
@@ -786,11 +969,164 @@
 				var marker = e.layer,
 				feature = marker.feature;
 				marker.setIcon(L.icon(feature.properties.icon));
-				var content = "<div style='clear: both'></div><div style='float: left; padding: 5px; margin-right: 10px'><img style='width: 200px;' src=" + feature.properties.image + " /></div><div float: right><span class='pop'><a target='_blank' href='" + feature.properties.url + "'>" + feature.properties.title + "</a><br>" + feature.properties.description + "</p></span></div><div style='clear: both'></div>";
-				marker.bindPopup(content, {minWidth: 400, autoPanPadding: [10,80], closeButton: true});
-			});
-			locations.addData(geoJSON);
 
+			var event1 = {
+					filter: time1,
+					onEachFeature
+				},
+			 	event2 = {
+					filter: time2,
+					onEachFeature
+				},
+			 	event3 = {
+					filter: time3,
+					onEachFeature
+				},
+				event4 = {
+					filter: time4,
+					onEachFeature
+				},
+				event5 = {
+					filter: time5,
+					onEachFeature
+				},
+				event6 = {
+					filter: time6,
+					onEachFeature
+				},
+				event7 = {
+					filter: time7,
+					onEachFeature
+				},
+				event8 = {
+					filter: time8,
+					onEachFeature
+				},
+				event9 = {
+					filter: time9,
+					onEachFeature
+				},
+				event10 = {
+					filter: time10,
+					onEachFeature
+				},
+				event11 = {
+					filter: time11,
+					onEachFeature
+				},
+				event12 = {
+					filter: time12,
+					onEachFeature
+				};
+
+			var time1 = {time: "01"},
+				time2 = {time: "02"},
+				time3 = {time: "03"},
+				time4 = {time: "04"},
+				time5 = {time: "05"},
+				time6 = {time: "06"},
+				time7 = {time: "07"},
+				time8 = {time: "08"},
+				time9 = {time: "09"},
+				time10 = {time: "10"},
+				time11 = {time: "11"},
+				time12 = {time: "12"};
+
+			function onEachFeature (feature, layer) {
+				var content = "<div style='clear: both'></div><div style='float: left; padding: 5px; margin-right: 10px'><img style='width: 200px;' src=" + feature.properties.image + " /></div><div float: right><span class='pop'><a target='_blank' href='" + feature.properties.url + "'>" + feature.properties.title + "</a><br>" + feature.properties.description + "</p></span></div><div style='clear: both'></div>";
+				layer.bindPopup(content, {minWidth: 400, autoPanPadding: [10,80], closeButton: true});
+			};
+
+			var json1 = L.geoJSON(events, event1),
+			 	json2 = L.geoJSON(events, event2),
+			 	json3 = L.geoJSON(events, event3),
+				json4 = L.geoJSON(events, event4),
+			 	json5 = L.geoJSON(events, event5),
+				json6 = L.geoJSON(events, event6),
+			 	json7 = L.geoJSON(events, event7),
+				json8 = L.geoJSON(events, event8),
+			 	json9 = L.geoJSON(events, event9),
+				json10 = L.geoJSON(events, event10),
+			 	json11 = L.geoJSON(events, event11),
+				json12 = L.geoJSON(events, event12);
+
+			function time1(feature){
+                if (feature.properties.time === time1.time) return true
+            };
+            function time2(feature){
+                if (feature.properties.time === time2.time) return true
+            };
+			function time3(feature){
+                if (feature.properties.time === time3.time) return true
+            };
+            function time4(feature){
+                if (feature.properties.time === time4.time) return true
+            };
+			function time5(feature){
+                if (feature.properties.time === time5.time) return true
+            };
+            function time6(feature){
+                if (feature.properties.time === time6.time) return true
+            };
+			function time7(feature){
+                if (feature.properties.time === time7.time) return true
+            };
+            function time8(feature){
+                if (feature.properties.time === time8.time) return true
+            };
+			function time9(feature){
+                if (feature.properties.time === time9.time) return true
+            };
+            function time10(feature){
+                if (feature.properties.time === time10.time) return true
+            };
+			function time11(feature){
+                if (feature.properties.time === time11.time) return true
+            };
+            function time12(feature){
+                if (feature.properties.time === time12.time) return true
+            };
+
+			json1.options.time = time1.time;
+			json2.options.time = time2.time;
+			json3.options.time = time3.time;
+			json4.options.time = time4.time;
+			json5.options.time = time5.time;
+			json6.options.time = time6.time;
+			json7.options.time = time7.time;
+			json8.options.time = time8.time;
+			json9.options.time = time9.time;
+			json10.options.time = time10.time;
+			json11.options.time = time11.time;
+			json12.options.time = time12.time;
+
+			var numberPath1 = L.layerGroup([json2,alphaLine1],{time:"02"}),
+			 	numberPath2 = L.layerGroup([json3,alphaLine2],{time:"03"}),
+				numberPath3 = L.layerGroup([json3,alphaLine3],{time:"04"}),
+				numberPath4 = L.layerGroup([json3,alphaLine4],{time:"05"}),
+				numberPath5 = L.layerGroup([json3,alphaLine5],{time:"06"}),
+				numberPath6 = L.layerGroup([json3,alphaLine6],{time:"07"}),
+				numberPath7 = L.layerGroup([json3,alphaLine7],{time:"08"}),
+				numberPath8 = L.layerGroup([json3,alphaLine8],{time:"09"}),
+				numberPath9 = L.layerGroup([json3,alphaLine9],{time:"10"}),
+				numberPath10 = L.layerGroup([json3,alphaLine10],{time:"11"}),
+				numberPath11 = L.layerGroup([json3,alphaLine11],{time:"12"});
+
+			var multiLayers = L.layerGroup([json1,numberPath1,,numberPath2,numberPath3,numberPath4,numberPath5,numberPath6,numberPath7,numberPath8,numberPath9,numberPath10,numberPath11]);
+
+			// Set the sliderControl options
+            var sliderControl1 = L.control.sliderControl( {
+                layer: multiLayers, //REQUIRED
+                alwaysShowDate: false,
+                showAllPopups: false, // to show all popups, instead of one, same as popup option "autoClose: false"
+                showPopups: false // to set it so, when a marker is generated by the slider, its popup doesn't automatically display
+            });
+
+            // Add the slider to the map
+            memap.addControl(sliderControl1);
+
+            // Initialize the slider
+            sliderControl1.startSlider();
 
 		</script>
 
