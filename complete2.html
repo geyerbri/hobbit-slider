@@ -111,7 +111,7 @@
 //            group1.options.time = "1992";
 //            group2.options.time = "1993";
 
-//            layer1.options.time = "1992/07";
+            layer1.options.time = "1992/07";
 //            layer2.options.time = "1992/01";
 //            layer3.options.time = "1992/06";
 //            function onEachFeature (feature, layer){
@@ -119,13 +119,13 @@
                     var content = "<div style='clear: both'></div><div><h4>" + feature.properties.title + "</h4><p>" + feature.properties.time + "</p><p>" + feature.properties.description + "</p></div>";
                     layer.bindPopup(content, {closeButton: true});
                 };
-*///                if(feature.properties.time === layer1.options.time){
+*/                if(feature.properties.time === layer1.options.time){
                     layer1.addData(dataset1);
 //                } else if(feature.properties.time === layer2.options.time){
 //                    layer2.addLayer(dataset1, description);
 //                } else if(feature.properties.time === layer3.options.time){
 //                    layer3.addLayer(layer, optionsObject);
-//                };
+                };
 //            };
             // Create the layerGroup
 //            var multiLayers = L.layerGroup([layer1, layer2]);
