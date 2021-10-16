@@ -257,8 +257,7 @@
 				alpha7 = [pointG, pointH],
 				alpha8 = [pointH, pointI],
 				alpha9 = [pointI, pointJ],
-				alpha10 = [pointJ, pointK],
-				alpha11 = [pointK, pointA];
+				alpha10 = [pointJ, pointA];
 
 			//create PolyLines
 			var	numberLine1 = new L.Polyline(numerical1, {
@@ -414,13 +413,6 @@
 					opacity: 1,
 					smoothFactor: 1,
 					time: "11"
-				}),
-				alphaLine11 = new L.Polyline(alpha11, {
-					color: '#2727ff',
-					weight: 3,
-					opacity: 1,
-					smoothFactor: 1,
-					time: "12"
 				});
 
 			//add pins
@@ -1106,10 +1098,9 @@
 				numberPath7 = L.layerGroup([json8,alphaLine7],{time:"08"}),
 				numberPath8 = L.layerGroup([json9,alphaLine8],{time:"09"}),
 				numberPath9 = L.layerGroup([json10,alphaLine9],{time:"10"}),
-				numberPath10 = L.layerGroup([json11,alphaLine10],{time:"11"}),
-				numberPath11 = L.layerGroup([json12,alphaLine11],{time:"12"});
+				numberPath10 = L.layerGroup([json11,alphaLine10],{time:"11"});
 
-			var multiLayers = L.layerGroup([json1,numberPath1,numberPath2,numberPath3,numberPath4,numberPath5,numberPath6,numberPath7,numberPath8,numberPath9,numberPath10,numberPath11]);
+			var multiLayers = L.layerGroup([json1,numberPath1,numberPath2,numberPath3,numberPath4,numberPath5,numberPath6,numberPath7,numberPath8,numberPath9,numberPath10]);
 
 			// Set the sliderControl options
             var sliderControl1 = L.control.sliderControl( {
