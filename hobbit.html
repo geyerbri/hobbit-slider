@@ -1021,6 +1021,10 @@
 				event12 = {
 					filter: time12,
 					onEachFeature
+				},
+				event13 = {
+					filter: time13,
+					onEachFeature
 				};
 
 			var time1 = {time: "01"},
@@ -1035,6 +1039,7 @@
 				time10 = {time: "10"},
 				time11 = {time: "11"},
 				time12 = {time: "12"};
+				time13 = {time: "13"};
 
 			function onEachFeature (feature, layer) {
 				var content = "<div style='clear: both'></div><div style='float: left; padding: 5px; margin-right: 10px'><img style='width: 200px;' src=" + feature.properties.image + " /></div><div float: right><span class='pop'><a target='_blank' href='" + feature.properties.url + "'>" + feature.properties.title + "</a><br>" + feature.properties.description + "</p></span></div><div style='clear: both'></div>";
@@ -1055,18 +1060,19 @@
 			 	hobbit11 = L.geoJSON(hobbits, event11),
 				hobbit12 = L.geoJSON(hobbits, event12);
 
-			var hobbit1 = L.geoJSON(lotr, event1),
-			 	hobbit2 = L.geoJSON(lotr, event2),
-			 	hobbit3 = L.geoJSON(lotr, event3),
-				hobbit4 = L.geoJSON(lotr, event4),
-			 	hobbit5 = L.geoJSON(lotr, event5),
-				hobbit6 = L.geoJSON(lotr, event6),
-			 	hobbit7 = L.geoJSON(lotr, event7),
-				hobbit8 = L.geoJSON(lotr, event8),
-			 	hobbit9 = L.geoJSON(lotr, event9),
-				hobbit10 = L.geoJSON(lotr, event10),
-			 	hobbit11 = L.geoJSON(lotr, event11),
-				hobbit12 = L.geoJSON(lotr, event12);
+			var lotr1 = L.geoJSON(lotr, event1),
+			 	lotr2 = L.geoJSON(lotr, event2),
+			 	lotr3 = L.geoJSON(lotr, event3),
+				lotr4 = L.geoJSON(lotr, event4),
+			 	lotr5 = L.geoJSON(lotr, event5),
+				lotr6 = L.geoJSON(lotr, event6),
+			 	lotr7 = L.geoJSON(lotr, event7),
+				lotr8 = L.geoJSON(lotr, event8),
+			 	lotr9 = L.geoJSON(lotr, event9),
+				lotr10 = L.geoJSON(lotr, event10),
+			 	lotr11 = L.geoJSON(lotr, event11),
+				lotr12 = L.geoJSON(lotr, event12);
+				lotr13 = L.geoJSON(lotr, event13);
 			function time1(feature){
                 if (feature.properties.time === time1.time) return true
             };
@@ -1103,6 +1109,9 @@
             function time12(feature){
                 if (feature.properties.time === time12.time) return true
             };
+			function time13(feature){
+                if (feature.properties.time === time2.time) return true
+            };
 
 			hobbit1.options.time = time1.time;
 			hobbit2.options.time = time2.time;
@@ -1117,6 +1126,20 @@
 			hobbit11.options.time = time11.time;
 			hobbit12.options.time = time12.time;
 
+			lotr1.options.time = time1.time;
+			lotr2.options.time = time2.time;
+			lotr3.options.time = time3.time;
+			lotr4.options.time = time4.time;
+			lotr5.options.time = time5.time;
+			lotr6.options.time = time6.time;
+			lotr7.options.time = time7.time;
+			lotr8.options.time = time8.time;
+			lotr9.options.time = time9.time;
+			lotr10.options.time = time10.time;
+			lotr11.options.time = time11.time;
+			lotr12.options.time = time12.time;
+			lotr13.options.time = time13.time;
+
 			var alphaPath1 = L.layerGroup([hobbit2,alphaLine1],{time:"02"}),
 			 	alphaPath2 = L.layerGroup([hobbit3,alphaLine2],{time:"03"}),
 				alphaPath3 = L.layerGroup([hobbit4,alphaLine3],{time:"04"}),
@@ -1128,18 +1151,18 @@
 				alphaPath9 = L.layerGroup([hobbit10,alphaLine9],{time:"10"}),
 				alphaPath10 = L.layerGroup([hobbit11,alphaLine10],{time:"11"});
 
-			var numberPath1 = L.layerGroup([json2,numberLine1],{time:"02"}),
-			 	numberPath2 = L.layerGroup([json3,numberLine2],{time:"03"}),
-				numberPath3 = L.layerGroup([json4,numberLine3],{time:"04"}),
-				numberPath4 = L.layerGroup([json5,numberLine4],{time:"05"}),
-				numberPath5 = L.layerGroup([json6,numberLine5],{time:"06"}),
-				numberPath6 = L.layerGroup([json7,numberLine6],{time:"07"}),
-				numberPath7 = L.layerGroup([json8,numberLine7],{time:"08"}),
-				numberPath8 = L.layerGroup([json9,numberLine8],{time:"09"}),
-				numberPath9 = L.layerGroup([json10,numberLine9],{time:"10"}),
-				numberPath9 = L.layerGroup([json11,numberLine10],{time:"11"}),
-				numberPath9 = L.layerGroup([json12,numberLine11],{time:"12"}),
-				numberPath10 = L.layerGroup([json13,numberLine12],{time:"13"});
+			var numberPath1 = L.layerGroup([lotr2,numberLine1],{time:"02"}),
+			 	numberPath2 = L.layerGroup([lotr3,numberLine2],{time:"03"}),
+				numberPath3 = L.layerGroup([lotr4,numberLine3],{time:"04"}),
+				numberPath4 = L.layerGroup([lotr5,numberLine4],{time:"05"}),
+				numberPath5 = L.layerGroup([lotr6,numberLine5],{time:"06"}),
+				numberPath6 = L.layerGroup([lotr7,numberLine6],{time:"07"}),
+				numberPath7 = L.layerGroup([lotr8,numberLine7],{time:"08"}),
+				numberPath8 = L.layerGroup([lotr9,numberLine8],{time:"09"}),
+				numberPath9 = L.layerGroup([lotr10,numberLine9],{time:"10"}),
+				numberPath9 = L.layerGroup([lotr11,numberLine10],{time:"11"}),
+				numberPath9 = L.layerGroup([lotr12,numberLine11],{time:"12"}),
+				numberPath10 = L.layerGroup([lotr13,numberLine12],{time:"13"});
 
 			var alphaMultiLayers = L.layerGroup([hobbit1,alphaPath1,alphaPath2,alphaPath3,alphaPath4,alphaPath5,alphaPath6,alphaPath7,alphaPath8,alphaPath9,alphaPath10]);
 
