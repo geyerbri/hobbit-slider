@@ -96,10 +96,6 @@
             var optionsObject = {
                 onEachFeature: onEachFeature
             };
-            function onEachFeature (feature, layer) {
-                var content = "<div style='clear: both'></div><div><h4>" + feature.properties.title + "</h4><p>" + feature.properties.time + "</p><p>" + feature.properties.description + "</p></div>";
-                layer.bindPopup(content, {closeButton: true});
-            };
 
             // Create the first geoJSON layer
 //            var group1 = L.geoJSON(dataset1, optionsObject);
@@ -119,7 +115,8 @@
             layer2.options.time = "1992/01";
 //            layer3.options.time = "1992/06";
             function onEachFeature (feature, layer){
-                if(feature.properties.time === layer1.options.time){
+                var content = "<div style='clear: both'></div><div><h4>" + feature.properties.title + "</h4><p>" + feature.properties.time + "</p><p>" + feature.properties.description + "</p></div>";
+                layer.bindPopup(content, {closeButton: true});                if(feature.properties.time === layer1.options.time){
                     layer1.addData(dataset1, optionsObject);
                 } else if(feature.properties.time === layer2.options.time){
                     layer2.addLayer(dataset1, optionsObject);
