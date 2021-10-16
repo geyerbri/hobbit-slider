@@ -662,6 +662,7 @@
 						description: 'Bilbo Baggins&#39; hobbit hole is comfortable and tidy, until Gandalf invites a group of dwarves for dinner',
 						url: 'http://lotr.wikia.com/wiki/Bag_End',
 						image: 'img/loc-img/bag-end.png',
+						position: 'start',
 						icon: {
 							iconUrl: 'leaflet/images/StartIconRed.png',
 							iconSize: [25, 41], // size of the icon
@@ -929,6 +930,7 @@
 						description: 'Frodo Baggins and Samwise Gamgee depart from Hobbiton to begin their journey with the Ring',
 						url: 'http://lotr.wikia.com/wiki/Hobbiton',
 						image: 'img/loc-img/bag-end.png',
+						position: 'start',
 						icon: {
 							iconUrl: 'leaflet/images/StartIconBlue.png',
 							iconSize: [25, 41], // size of the icon
@@ -1061,7 +1063,11 @@
 			function onEachFeature (feature, layer) {
 				var content = "<div style='clear: both'></div><div style='float: left; padding: 5px; margin-right: 10px'><img style='width: 200px;' src=" + feature.properties.image + " /></div><div float: right><span class='pop'><a target='_blank' href='" + feature.properties.url + "'>" + feature.properties.title + "</a><br>" + feature.properties.description + "</p></span></div><div style='clear: both'></div>";
 				layer.setIcon(L.icon(feature.properties.icon));
-				layer.bindPopup(content, {minWidth: 400, autoPanPadding: [10,80], closeButton: true});
+				if (feature.properties.position === "start"){
+					layer.bindPopup(content, {minWidth: 400, autoPanPadding: [10,80], closeButton: true}).openPopup();
+				} else{
+					layer.bindPopup(content, {minWidth: 400, autoPanPadding: [10,80], closeButton: true});
+				};
 			};
 
 			var hobbit1 = L.geoJSON(hobbits, event1),
