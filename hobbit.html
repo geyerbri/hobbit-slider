@@ -965,10 +965,6 @@
 					}
 				}
 			];
-			locations.on('layeradd', function(e) {
-				var marker = e.layer,
-				feature = marker.feature;
-				marker.setIcon(L.icon(feature.properties.icon));
 
 			var event1 = {
 					filter: time1,
@@ -1034,6 +1030,7 @@
 
 			function onEachFeature (feature, layer) {
 				var content = "<div style='clear: both'></div><div style='float: left; padding: 5px; margin-right: 10px'><img style='width: 200px;' src=" + feature.properties.image + " /></div><div float: right><span class='pop'><a target='_blank' href='" + feature.properties.url + "'>" + feature.properties.title + "</a><br>" + feature.properties.description + "</p></span></div><div style='clear: both'></div>";
+				layer.setIcon(L.icon(feature.properties.icon));
 				layer.bindPopup(content, {minWidth: 400, autoPanPadding: [10,80], closeButton: true});
 			};
 
@@ -1112,7 +1109,9 @@
 				numberPath10 = L.layerGroup([json3,alphaLine10],{time:"11"}),
 				numberPath11 = L.layerGroup([json3,alphaLine11],{time:"12"});
 
-			var multiLayers = L.layerGroup([json1,numberPath1,,numberPath2,numberPath3,numberPath4,numberPath5,numberPath6,numberPath7,numberPath8,numberPath9,numberPath10,numberPath11]);
+			var multiLayers = L.layerGroup(
+				[json1,numberPath1,,numberPath2,numberPath3,numberPath4,numberPath5,numberPath6,numberPath7,numberPath8,numberPath9,numberPath10,numberPath11]
+			);
 
 			// Set the sliderControl options
             var sliderControl1 = L.control.sliderControl( {
