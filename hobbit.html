@@ -1073,6 +1073,7 @@
 			 	lotr11 = L.geoJSON(lotr, event11),
 				lotr12 = L.geoJSON(lotr, event12);
 				lotr13 = L.geoJSON(lotr, event13);
+
 			function time1(feature){
                 if (feature.properties.time === time1.time) return true
             };
@@ -1110,7 +1111,7 @@
                 if (feature.properties.time === time12.time) return true
             };
 			function time13(feature){
-                if (feature.properties.time === time2.time) return true
+                if (feature.properties.time === time13.time) return true
             };
 
 			hobbit1.options.time = time1.time;
