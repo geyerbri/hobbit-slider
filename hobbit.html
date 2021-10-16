@@ -33,17 +33,6 @@
 				z-index: 1000;
 				width: 22%;
 			}
-			.leaflet-bottom.leaflet-left .leaflet-control .ui-slider {
-				background: #ff6666;
-				border: 1px solid #ff2727;
-				margin-bottom: 16px;
-			}
-			.leaflet-bottom.leaflet-left .leaflet-control .ui-slider #leaflet-slider .ui-slider-handle {
-				background: #ff2727;
-			}
-			.leaflet-bottom.leaflet-left .leaflet-control #slider-timestamp {
-				display: none!important;
-			}
 			.leaflet-bottom.leaflet-right .leaflet-control .ui-slider {
 				background: #6666ff;
 				border: 1px solid #2727ff;
@@ -53,6 +42,14 @@
 			}
 			.leaflet-bottom.leaflet-right .leaflet-control #slider-timestamp {
 				display: none!important;
+			}
+			.leaflet-bottom.leaflet-right .leaflet-control .ui-slider :nth-child(2) {
+				background: #ff6666;
+				border: 1px solid #ff2727;
+				margin-bottom: 16px;
+			}
+			.leaflet-bottom.leaflet-right .leaflet-control .ui-slider :nth-child(2) #leaflet-slider .ui-slider-handle {
+				background: #ff2727;
 			}
 			body a {
 				color: #488C9F !important;
@@ -1203,12 +1200,12 @@
 			});
 
             // Add the slider to the map
-            memap.addControl(sliderControl1);
 			memap.addControl(sliderControl2);
+			memap.addControl(sliderControl1);
 
             // Initialize the slider
-            sliderControl1.startSlider();
 			sliderControl2.startSlider();
+			sliderControl1.startSlider();
 
 		</script>
 
