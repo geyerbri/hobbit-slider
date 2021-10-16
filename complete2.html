@@ -105,7 +105,6 @@
 //            var group1 = L.geoJSON(dataset1, optionsObject);
             var layer1 = L.geoJSON();
             var layer2 = L.geoJSON();
-            var layer3 = L.geoJSON();
 
             // Create the second geoJSON layer from external file
             $.getJSON("data/popups.json", function(json) {
@@ -117,18 +116,15 @@
 
             layer1.options.time = '1992/07';
             layer2.options.time = '1992/01';
-            layer3.options.time = '1992/06';
             function onEachFeature (feature, layer){
                 if(feature.properties.time === layer1.options.time){
                     layer1.addLayer(dataset1, optionsObject);
                 } else if(feature.properties.time === layer2.options.time){
                     layer2.addLayer(dataset1, optionsObject);
-                } else if(feature.properties.time === layer3.options.time){
-                    layer3.addLayer(dataset1, optionsObject);
                 };
             };
             // Create the layerGroup
-            var multiLayers = L.layerGroup([layer1, layer2, layer3]);
+            var multiLayers = L.layerGroup([layer1, layer2]);
 
             // Set the sliderControl options
             var sliderControl1 = L.control.sliderControl( {
