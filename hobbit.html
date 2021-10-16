@@ -32,8 +32,7 @@
 				left: 11px;
 				z-index: 1000;
 				width: 22%;
-				height: auto;
-				min-width: 120px !important;
+				min-width: 120px;
 			}
 			.leaflet-bottom.leaflet-right .leaflet-control .ui-slider {
 				background: #6666ff;
@@ -131,7 +130,9 @@
 		</div>
 
 		<!-- Map Key -->
-		<img id="key" src="img/key.png" />
+		<duv id="key">
+			<img src="img/key.png" width="100%" />
+		</div>
 
 		<!-- Map Section -->
 		<div id="memap"></div>
