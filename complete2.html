@@ -102,8 +102,8 @@
                 onEachFeature
             };
 
-            var time1 = "1992/01",
-                time2 = "1992/06";
+            var time1 = {time: "1992/01"},
+                time2 = {time: "1992/06"};
 
             function onEachFeature (feature, layer) {
                 var content = "<div style='clear: both'></div><div><h4>" + feature.properties.title + "</h4><p>" + feature.properties.time + "</p><p>" + feature.properties.description + "</p></div>";
@@ -126,10 +126,10 @@
 //            layer3.options.time = "1992/06";
 
                 function time1(feature){
-                    if (feature.properties.time === time1) return true
+                    if (feature.properties.time === time1.properties.time) return true
                 };
                 function time2(feature){
-                    if (feature.properties.time === time2) return true
+                    if (feature.properties.time === time2.properties.time) return true
                 };
 
             // Create the layerGroup
