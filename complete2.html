@@ -93,9 +93,17 @@
 
             // Write up the functions for using the geoJSON data to produce popups for each marker
 
-            var optionsObject = {
+            var time1 = {
+                "time": "1992/07"
+                filter: time1,
                 onEachFeature: onEachFeature
             };
+            var time2 = {
+                "time": "1992/01"
+                filter: time2,
+                onEachFeature: onEachFeature
+            };
+
             function onEachFeature (feature, layer) {
                 var content = "<div style='clear: both'></div><div><h4>" + feature.properties.title + "</h4><p>" + feature.properties.time + "</p><p>" + feature.properties.description + "</p></div>";
                 layer.bindPopup(content, {closeButton: true});
@@ -103,8 +111,8 @@
 
             // Create the first geoJSON layer
 //            var group1 = L.geoJSON(dataset1, optionsObject);
-            var layer1 = L.geoJSON(dataset1, {filter: time1, onEachFeature});
-            var layer2 = L.geoJSON(dataset1, {filter: time2, onEachFeature});
+            var layer1 = L.geoJSON(dataset1, time1);
+            var layer2 = L.geoJSON(dataset1, time2);
 //            var layer3 = L.geoJSON();
 
             // Create the second geoJSON layer from external file
@@ -114,15 +122,13 @@
             // Set the time attribute for each group
 //            group1.options.time = "1992";
 //            group2.options.time = "1993";
-            layer1.options.time = "1992/07";
-            layer2.options.time = "1992/01";
 //            layer3.options.time = "1992/06";
 
                 function time1(feature){
-                    if (feature.properties.time === "1992/07") return true
+                    if (feature.properties.time === layer1.options.time) return true
                 };
                 function time2(feature){
-                    if (feature.properties.time === "1992/01") return true
+                    if (feature.properties.time === layer2.options.time) return true
                 };
 
             // Create the layerGroup
