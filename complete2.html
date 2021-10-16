@@ -109,11 +109,11 @@
 
             // Create the second geoJSON layer from external file
             $.getJSON("data/popups.json", function(json) {
-                var group2 = L.geoJSON(json, optionsObject);
+//                var group2 = L.geoJSON(json, optionsObject);
 
             // Set the time attribute for each group
-            group1.options.time = "1992";
-            group2.options.time = "1993";
+//            group1.options.time = "1992";
+//            group2.options.time = "1993";
 
             layer1.options.time = '1992/07';
             layer2.options.time = '1992/01';
