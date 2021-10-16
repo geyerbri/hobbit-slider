@@ -119,10 +119,10 @@
                     var content = "<div style='clear: both'></div><div><h4>" + feature.properties.title + "</h4><p>" + feature.properties.time + "</p><p>" + feature.properties.description + "</p></div>";
                     layer.bindPopup(content, {closeButton: true});
                 };
-                if(feature.properties.time === layer1.options.time){
+//                if(feature.properties.time === layer1.options.time){
                     layer1.addData(dataset1, description);
-                } else if(feature.properties.time === layer2.options.time){
-                    layer2.addLayer(dataset1, description);
+//                } else if(feature.properties.time === layer2.options.time){
+//                    layer2.addLayer(dataset1, description);
 //                } else if(feature.properties.time === layer3.options.time){
 //                    layer3.addLayer(layer, optionsObject);
                 };
