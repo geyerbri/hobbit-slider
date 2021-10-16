@@ -93,11 +93,13 @@
 
             // Write up the functions for using the geoJSON data to produce popups for each marker
 
-//            var optionsObject = {
-//                onEachFeature: onEachFeature
-//            };
-//            function onEachFeature (feature, layer) {
-//            };
+            var optionsObject = {
+                onEachFeature: onEachFeature
+            };
+            function onEachFeature (feature, layer) {
+                var content = "<div style='clear: both'></div><div><h4>" + feature.properties.title + "</h4><p>" + feature.properties.time + "</p><p>" + feature.properties.description + "</p></div>";
+                layer.bindPopup(content, {closeButton: true});
+            };
 
             // Create the first geoJSON layer
 //            var group1 = L.geoJSON(dataset1, optionsObject);
@@ -114,14 +116,10 @@
 
             layer1.options.time = '1992/07';
             layer2.options.time = '1992/01';
-            function onEachFeature (feature, layer){
-                var content = "<div style='clear: both'></div><div><h4>" + feature.properties.title + "</h4><p>" + feature.properties.time + "</p><p>" + feature.properties.description + "</p></div>";
-                if(feature.properties.time === "1992/07"){
-                    layer1.addLayer(layer);
-                } else if(feature.properties.time === layer2.options.time){
-                    layer2.addLayer(layer);
-                    layer.bindPopup(content, {closeButton: true});
-                };
+            if(feature.properties.time === "1992/07"){
+                layer1.addLayer(layer);
+            } else if(feature.properties.time === layer2.options.time){
+                layer2.addLayer(layer);
             };
             // Create the layerGroup
 //            var multiLayers = L.layerGroup([layer1, layer2]);
