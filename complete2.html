@@ -123,7 +123,6 @@
             // Set the time attribute for each group
 //            group1.options.time = "1992";
 //            group2.options.time = "1993";
-//            layer3.options.time = "1992/06";
 
                 function time1(feature){
                     if (feature.properties.time === time1.time) return true
@@ -131,6 +130,9 @@
                 function time2(feature){
                     if (feature.properties.time === time2.time) return true
                 };
+
+                layer1.options.time = time1.time;
+                layer2.options.time = time2.time;
 
             // Create the layerGroup
             var multiLayers = L.layerGroup([layer1, layer2]);
