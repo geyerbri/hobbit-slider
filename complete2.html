@@ -120,11 +120,11 @@
             layer3.options.time = '1992/06';
             function onEachFeature (feature, layer){
                 if(feature.properties.time === layer1.options.time){
-                    layer1.addLayer(layer, optionsObject);
+                    layer1.addLayer(dataset1, optionsObject);
                 } else if(feature.properties.time === layer2.options.time){
-                    layer2.addLayer(layer, optionsObject);
+                    layer2.addLayer(dataset1, optionsObject);
                 } else if(feature.properties.time === layer3.options.time){
-                    layer3.addLayer(layer, optionsObject);
+                    layer3.addLayer(dataset1, optionsObject);
                 };
             };
             // Create the layerGroup
