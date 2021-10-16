@@ -416,7 +416,7 @@
 				});
 
 			//add pins
-			var events = [
+			var hobbits = [
 				{
 					type: 'Feature',
 					geometry: {
@@ -449,35 +449,12 @@
 					},
 					properties: {
 						title: 'Thorin&#39;s Company at Rivendell',
-						description: 'Bilbo, Gandalf, and Thorin&#39;s company of dwarves are hosted by Elrond at Rivendell',
 						time: '03',
+						description: 'Bilbo, Gandalf, and Thorin&#39;s company of dwarves are hosted by Elrond at Rivendell',
 						url: 'http://lotr.wikia.com/wiki/Rivendell',
 						image: 'img/loc-img/rivendell.jpg',
 						icon: {
 							iconUrl: 'leaflet/images/GondorIconRed.png',
-							iconSize: [25, 41], // size of the icon
-							iconAnchor: [12.5, 41], // point of the icon which will correspond to marker's location
-							popupAnchor: [0, -41], // point from which the popup should open relative to the iconAnchor
-							shadowURL: 'leaflet/images/marker-shadow.png',
-							shadowSize:   [55, 41], // size of shadow
-							shadowAnchor: [12.5, 41], // point of icon from which shadow casts
-							className: 'dot'
-						}
-					}
-				},
-				{
-					type: 'Feature',
-					geometry: {
-						type: 'Point',
-						coordinates: [-9.39472, 7.1775]
-					},
-					properties: {
-						title: 'The Fellowship of the Ring at Rivendell',
-						description: 'After escaping the Nazgul, Frodo and the Fellowship visit Rivendell, where they also run into the happily retired Bilbo',
-						url: 'http://lotr.wikia.com/wiki/Rivendell',
-						image: 'img/loc-img/rivendell.jpg',
-						icon: {
-							iconUrl: 'leaflet/images/GondorIconBlue.png',
 							iconSize: [25, 41], // size of the icon
 							iconAnchor: [12.5, 41], // point of the icon which will correspond to marker's location
 							popupAnchor: [0, -41], // point from which the popup should open relative to the iconAnchor
@@ -502,29 +479,6 @@
 						url: 'http://lotr.wikia.com/wiki/Misty_Mountains',
 						icon: {
 							iconUrl: 'leaflet/images/GondorIconRed.png',
-							iconSize: [25, 41], // size of the icon
-							iconAnchor: [12.5, 41], // point of the icon which will correspond to marker's location
-							popupAnchor: [0, -41], // point from which the popup should open relative to the iconAnchor
-							shadowURL: 'leaflet/images/marker-shadow.png',
-							shadowSize:   [55, 41], // size of shadow
-							shadowAnchor: [12.5, 41], // point of icon from which shadow casts
-							className: 'dot'
-						}
-					}
-				},
-				{
-					type: 'Feature',
-					geometry: {
-						type: 'Point',
-						coordinates: [-9.12964, 6.12963]
-					},
-					properties: {
-						title: 'Mines of Moria',
-						description: 'When the Fellowship encounters the Misty Mountains, they decide to cross underground through the Mines of Moria, which they think are deserted...',
-						image: 'img/loc-img/mines-moria.jpg',
-						url: 'http://lotr.wikia.com/wiki/Moria',
-						icon: {
-							iconUrl: 'leaflet/images/GondorIconBlue.png',
 							iconSize: [25, 41], // size of the icon
 							iconAnchor: [12.5, 41], // point of the icon which will correspond to marker's location
 							popupAnchor: [0, -41], // point from which the popup should open relative to the iconAnchor
@@ -683,10 +637,86 @@
 					type: 'Feature',
 					geometry: {
 						type: 'Point',
+						coordinates: [-12.27448, 6.90219]
+					},
+					properties: {
+						title: 'Bag End',
+						time: '01',
+						description: 'Bilbo Baggins&#39; hobbit hole is comfortable and tidy, until Gandalf invites a group of dwarves for dinner',
+						url: 'http://lotr.wikia.com/wiki/Bag_End',
+						image: 'img/loc-img/bag-end.png',
+						icon: {
+							iconUrl: 'leaflet/images/StartIconRed.png',
+							iconSize: [25, 41], // size of the icon
+							iconAnchor: [12.5, 41], // point of the icon which will correspond to marker's location
+							popupAnchor: [0, -41], // point from which the popup should open relative to the iconAnchor
+							shadowURL: 'leaflet/images/marker-shadow.png',
+							shadowSize:   [55, 41], // size of shadow
+							shadowAnchor: [12.5, 41], // point of icon from which shadow casts
+							className: 'dot'
+						}
+					}
+				}
+			];
+
+			var lotr = [
+				{
+					type: 'Feature',
+					geometry: {
+						type: 'Point',
+						coordinates: [-9.39472, 7.1775]
+					},
+					properties: {
+						title: 'The Fellowship of the Ring at Rivendell',
+						time: '04',
+						description: 'After escaping the Nazgul, Frodo and the Fellowship visit Rivendell, where they also run into the happily retired Bilbo',
+						url: 'http://lotr.wikia.com/wiki/Rivendell',
+						image: 'img/loc-img/rivendell.jpg',
+						icon: {
+							iconUrl: 'leaflet/images/GondorIconBlue.png',
+							iconSize: [25, 41], // size of the icon
+							iconAnchor: [12.5, 41], // point of the icon which will correspond to marker's location
+							popupAnchor: [0, -41], // point from which the popup should open relative to the iconAnchor
+							shadowURL: 'leaflet/images/marker-shadow.png',
+							shadowSize:   [55, 41], // size of shadow
+							shadowAnchor: [12.5, 41], // point of icon from which shadow casts
+							className: 'dot'
+						}
+					}
+				},
+				{
+					type: 'Feature',
+					geometry: {
+						type: 'Point',
+						coordinates: [-9.12964, 6.12963]
+					},
+					properties: {
+						title: 'Mines of Moria',
+						time: '05',
+						description: 'When the Fellowship encounters the Misty Mountains, they decide to cross underground through the Mines of Moria, which they think are deserted...',
+						image: 'img/loc-img/mines-moria.jpg',
+						url: 'http://lotr.wikia.com/wiki/Moria',
+						icon: {
+							iconUrl: 'leaflet/images/GondorIconBlue.png',
+							iconSize: [25, 41], // size of the icon
+							iconAnchor: [12.5, 41], // point of the icon which will correspond to marker's location
+							popupAnchor: [0, -41], // point from which the popup should open relative to the iconAnchor
+							shadowURL: 'leaflet/images/marker-shadow.png',
+							shadowSize:   [55, 41], // size of shadow
+							shadowAnchor: [12.5, 41], // point of icon from which shadow casts
+							className: 'dot'
+						}
+					}
+				},
+				{
+					type: 'Feature',
+					geometry: {
+						type: 'Point',
 						coordinates: [-11.70044, 6.62156]
 					},
 					properties: {
 						title: 'Tom Bombadil&#39;s House',
+						time: '02',
 						description: 'The house of Tom Bombadill and Goldberry. Frodo and company stay here when Merry and Pippen are captured by Old Man Willow. He then escorts them through the Barrow Downs after freeing them from the wights.',
 						url:'http://tolkiengateway.net/wiki/Tom_Bombadil',
 						image: 'img/loc-img/TomBombadilsHouse.jpg',
@@ -710,6 +740,7 @@
 					},
 					properties: {
 						title: 'Lothlorien',
+						time: '06',
 						description: 'Considered one of the most beautiful places in all Middle-earth, it is the home of the Silvan Elves. Frodo and company received gifts from the Lady Galadriel and were sent down the River Anduin. Frodo was shown visions of the future in Galadriel&#39;s mirror.',
 						url:'http://tolkiengateway.net/wiki/Lothl%C3%B3rien',
 						image: 'img/loc-img/lothlorien.jpg',
@@ -733,6 +764,7 @@
 					},
 					properties: {
 						title: 'Amon Hen',
+						time: '07',
 						description: 'Upon it&#39;s summit sits the Seat of Seeing. Here is where Boromir attempted to take the ring from Frodo and the fellowship was split. While fleeing from Boromir, Frodo sits upon the Seat of Seeing and recieves glimpses of the war across the land. Sauron almost locates the ring at this point and Frodo realizes he must continue on alone.',
 						url:'http://tolkiengateway.net/wiki/Amon_Hen',
 						image: 'img/loc-img/Amon_Hen.jpg',
@@ -756,6 +788,7 @@
 					},
 					properties: {
 						title: 'Dead Marshes',
+						time: '08',
 						description: 'The Last Alliance of Elves and Men fought and died together here. Over half of the forces of Lothlorien died in this battle, giving rise to the faces of the dead in the marsh. Frodo and Sam follow Gollum through the marshes into Shelob&#39;s lair.',
 						url:'http://tolkiengateway.net/wiki/Dead_Marshes',
 						image: 'img/loc-img/DeadMarshes.jpg',
@@ -779,6 +812,7 @@
 					},
 					properties: {
 						title: 'Tower of Cirith Ungol',
+						time: '09',
 						description: 'Originally a watchtower of Gondor, Frodo is captured by the Uruk hai and taken here. Sam follows, using the ring and rescues him. From there they make their way into Mordor',
 						url:'http://tolkiengateway.net/wiki/Tower_of_Cirith_Ungol',
 						image: 'img/loc-img/CirithUngol.gif',
@@ -802,6 +836,7 @@
 					},
 					properties: {
 						title: 'Mount Doom',
+						time: '10',
 						description: 'This is where Sauron forges the One Ring and where it must be destroyed. Frodo and Sam accomplish this task with the help of Gollum, who perishes in the flames.',
 						url:'http://tolkiengateway.net/wiki/Mount_Doom',
 						image: 'img/loc-img/mountdoom.jpg',
@@ -825,6 +860,7 @@
 					},
 					properties: {
 						title: 'Minas Tirith',
+						time: '11',
 						description: 'The capital of the southern kingdoms ruled by kings and stewards until the return of Aragorn.',
 						url:'http://tolkiengateway.net/wiki/Minas_Tirith',
 						image: 'img/loc-img/Gondor.jpg',
@@ -848,6 +884,7 @@
 					},
 					properties: {
 						title: 'Battle of Bywater',
+						time: '12'
 						description: 'This is the last battle in the War of the Ring and only the second and last battle fought within the Shire. When Frodo returns home from his adventures, he and Gandolf discover that everythinng hobbits hold dear has been outlawed by Ruffians. Merry and Pippen lead the overthrow.',
 						url:'http://tolkiengateway.net/wiki/Battle_of_Bywater',
 						image: 'img/loc-img/BattleofBywater.jpg',
@@ -871,6 +908,7 @@
 					},
 					properties: {
 						title: 'Hobbiton, the Shire',
+						time: '01',
 						description: 'Frodo Baggins and Samwise Gamgee depart from Hobbiton to begin their journey with the Ring',
 						url: 'http://lotr.wikia.com/wiki/Hobbiton',
 						image: 'img/loc-img/bag-end.png',
@@ -890,34 +928,11 @@
 					type: 'Feature',
 					geometry: {
 						type: 'Point',
-						coordinates: [-12.27448, 6.90219]
-					},
-					properties: {
-						title: 'Bag End',
-						time: '01',
-						description: 'Bilbo Baggins&#39; hobbit hole is comfortable and tidy, until Gandalf invites a group of dwarves for dinner',
-						url: 'http://lotr.wikia.com/wiki/Bag_End',
-						image: 'img/loc-img/bag-end.png',
-						icon: {
-							iconUrl: 'leaflet/images/StartIconRed.png',
-							iconSize: [25, 41], // size of the icon
-							iconAnchor: [12.5, 41], // point of the icon which will correspond to marker's location
-							popupAnchor: [0, -41], // point from which the popup should open relative to the iconAnchor
-							shadowURL: 'leaflet/images/marker-shadow.png',
-							shadowSize:   [55, 41], // size of shadow
-							shadowAnchor: [12.5, 41], // point of icon from which shadow casts
-							className: 'dot'
-						}
-					}
-				},
-				{
-					type: 'Feature',
-					geometry: {
-						type: 'Point',
 						coordinates: [-13.24402, 6.52849]
 					},
 					properties: {
 						title: 'Grey Havens',
+						time: '13',
 						description: 'Port city of the elves where Frodo, Bilbo, Galadriel and Gandolf sail for Valinor. Some years later, Samwise Gamgee sails to Valinor and takes his place among the ringbearers. Rumor has it that centuries later, Legolas and Gimli joined them.',
 						url:'http://tolkiengateway.net/wiki/Grey_Havens',
 						image: 'img/loc-img/Grey-Havens.-By-Alan-Lee.jpg',
@@ -941,6 +956,7 @@
 					},
 					properties: {
 						title: 'Frozen Trolls',
+						time: '03',
 						description: 'Frodo and friends found the trolls frozen in stone through their encounter with Bilbo decades before.',
 						url: 'http://lotr.wikia.com/wiki/Stone-trolls',
 						image: 'img/loc-img/the-trolls.jpg',
@@ -956,7 +972,7 @@
 						}
 					}
 				}
-			];
+			]
 
 			var event1 = {
 					filter: time1,
@@ -1026,19 +1042,31 @@
 				layer.bindPopup(content, {minWidth: 400, autoPanPadding: [10,80], closeButton: true});
 			};
 
-			var json1 = L.geoJSON(events, event1),
-			 	json2 = L.geoJSON(events, event2),
-			 	json3 = L.geoJSON(events, event3),
-				json4 = L.geoJSON(events, event4),
-			 	json5 = L.geoJSON(events, event5),
-				json6 = L.geoJSON(events, event6),
-			 	json7 = L.geoJSON(events, event7),
-				json8 = L.geoJSON(events, event8),
-			 	json9 = L.geoJSON(events, event9),
-				json10 = L.geoJSON(events, event10),
-			 	json11 = L.geoJSON(events, event11),
-				json12 = L.geoJSON(events, event12);
+			var hobbit1 = L.geoJSON(hobbits, event1),
+			 	hobbit2 = L.geoJSON(hobbits, event2),
+			 	hobbit3 = L.geoJSON(hobbits, event3),
+				hobbit4 = L.geoJSON(hobbits, event4),
+			 	hobbit5 = L.geoJSON(hobbits, event5),
+				hobbit6 = L.geoJSON(hobbits, event6),
+			 	hobbit7 = L.geoJSON(hobbits, event7),
+				hobbit8 = L.geoJSON(hobbits, event8),
+			 	hobbit9 = L.geoJSON(hobbits, event9),
+				hobbit10 = L.geoJSON(hobbits, event10),
+			 	hobbit11 = L.geoJSON(hobbits, event11),
+				hobbit12 = L.geoJSON(hobbits, event12);
 
+			var hobbit1 = L.geoJSON(events, event1),
+			 	hobbit2 = L.geoJSON(events, event2),
+			 	hobbit3 = L.geoJSON(events, event3),
+				hobbit4 = L.geoJSON(events, event4),
+			 	hobbit5 = L.geoJSON(events, event5),
+				hobbit6 = L.geoJSON(events, event6),
+			 	hobbit7 = L.geoJSON(events, event7),
+				hobbit8 = L.geoJSON(events, event8),
+			 	hobbit9 = L.geoJSON(events, event9),
+				hobbit10 = L.geoJSON(events, event10),
+			 	hobbit11 = L.geoJSON(events, event11),
+				hobbit12 = L.geoJSON(events, event12);
 			function time1(feature){
                 if (feature.properties.time === time1.time) return true
             };
@@ -1076,45 +1104,71 @@
                 if (feature.properties.time === time12.time) return true
             };
 
-			json1.options.time = time1.time;
-			json2.options.time = time2.time;
-			json3.options.time = time3.time;
-			json4.options.time = time4.time;
-			json5.options.time = time5.time;
-			json6.options.time = time6.time;
-			json7.options.time = time7.time;
-			json8.options.time = time8.time;
-			json9.options.time = time9.time;
-			json10.options.time = time10.time;
-			json11.options.time = time11.time;
-			json12.options.time = time12.time;
+			hobbit1.options.time = time1.time;
+			hobbit2.options.time = time2.time;
+			hobbit3.options.time = time3.time;
+			hobbit4.options.time = time4.time;
+			hobbit5.options.time = time5.time;
+			hobbit6.options.time = time6.time;
+			hobbit7.options.time = time7.time;
+			hobbit8.options.time = time8.time;
+			hobbit9.options.time = time9.time;
+			hobbit10.options.time = time10.time;
+			hobbit11.options.time = time11.time;
+			hobbit12.options.time = time12.time;
 
-			var numberPath1 = L.layerGroup([json2,alphaLine1],{time:"02"}),
-			 	numberPath2 = L.layerGroup([json3,alphaLine2],{time:"03"}),
-				numberPath3 = L.layerGroup([json4,alphaLine3],{time:"04"}),
-				numberPath4 = L.layerGroup([json5,alphaLine4],{time:"05"}),
-				numberPath5 = L.layerGroup([json6,alphaLine5],{time:"06"}),
-				numberPath6 = L.layerGroup([json7,alphaLine6],{time:"07"}),
-				numberPath7 = L.layerGroup([json8,alphaLine7],{time:"08"}),
-				numberPath8 = L.layerGroup([json9,alphaLine8],{time:"09"}),
-				numberPath9 = L.layerGroup([json10,alphaLine9],{time:"10"}),
-				numberPath10 = L.layerGroup([json11,alphaLine10],{time:"11"});
+			var alphaPath1 = L.layerGroup([hobbit2,alphaLine1],{time:"02"}),
+			 	alphaPath2 = L.layerGroup([hobbit3,alphaLine2],{time:"03"}),
+				alphaPath3 = L.layerGroup([hobbit4,alphaLine3],{time:"04"}),
+				alphaPath4 = L.layerGroup([hobbit5,alphaLine4],{time:"05"}),
+				alphaPath5 = L.layerGroup([hobbit6,alphaLine5],{time:"06"}),
+				alphaPath6 = L.layerGroup([hobbit7,alphaLine6],{time:"07"}),
+				alphaPath7 = L.layerGroup([hobbit8,alphaLine7],{time:"08"}),
+				alphaPath8 = L.layerGroup([hobbit9,alphaLine8],{time:"09"}),
+				alphaPath9 = L.layerGroup([hobbit10,alphaLine9],{time:"10"}),
+				alphaPath10 = L.layerGroup([hobbit11,alphaLine10],{time:"11"});
 
-			var multiLayers = L.layerGroup([json1,numberPath1,numberPath2,numberPath3,numberPath4,numberPath5,numberPath6,numberPath7,numberPath8,numberPath9,numberPath10]);
+			var numberPath1 = L.layerGroup([json2,numberLine1],{time:"02"}),
+			 	numberPath2 = L.layerGroup([json3,numberLine2],{time:"03"}),
+				numberPath3 = L.layerGroup([json4,numberLine3],{time:"04"}),
+				numberPath4 = L.layerGroup([json5,numberLine4],{time:"05"}),
+				numberPath5 = L.layerGroup([json6,numberLine5],{time:"06"}),
+				numberPath6 = L.layerGroup([json7,numberLine6],{time:"07"}),
+				numberPath7 = L.layerGroup([json8,numberLine7],{time:"08"}),
+				numberPath8 = L.layerGroup([json9,numberLine8],{time:"09"}),
+				numberPath9 = L.layerGroup([json10,numberLine9],{time:"10"}),
+				numberPath9 = L.layerGroup([json11,numberLine10],{time:"11"}),
+				numberPath9 = L.layerGroup([json12,numberLine11],{time:"12"}),
+				numberPath10 = L.layerGroup([json13,numberLine12],{time:"13"});
+
+			var alphaMultiLayers = L.layerGroup([hobbit1,alphaPath1,alphaPath2,alphaPath3,alphaPath4,alphaPath5,alphaPath6,alphaPath7,alphaPath8,alphaPath9,alphaPath10]);
+
+			var numberMultiLayers = L.layerGroup([lotr1,numberPath1,numberPath2,numberPath3,numberPath4,numberPath5,numberPath6,numberPath7,numberPath8,numberPath9,numberPath10]);
 
 			// Set the sliderControl options
             var sliderControl1 = L.control.sliderControl( {
-                layer: multiLayers, //REQUIRED
+                layer: alphaMultiLayers, //REQUIRED
+				position: topleft,
                 alwaysShowDate: false,
                 showAllPopups: false, // to show all popups, instead of one, same as popup option "autoClose: false"
                 showPopups: false // to set it so, when a marker is generated by the slider, its popup doesn't automatically display
             });
 
+			var sliderControl2 = L.control.sliderControl( {
+				layer: numberMultiLayers, //REQUIRED
+				alwaysShowDate: true,
+				showAllPopups: false, // to show all popups, instead of one, same as popup option "autoClose: false"
+				showPopups: false // to set it so, when a marker is generated by the slider, its popup doesn't automatically display
+			});
+
+
             // Add the slider to the map
             memap.addControl(sliderControl1);
+			memap.addControl(sliderControl2);
 
             // Initialize the slider
             sliderControl1.startSlider();
+			sliderControl2.startSlider();
 
 		</script>
 
