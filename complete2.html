@@ -101,9 +101,14 @@
                 filter: time2,
                 onEachFeature
             };
+            var event3 = {
+                filter: time3,
+                onEachFeature
+            };
 
             var time1 = {time: "1992/01"},
-                time2 = {time: "1992/06"};
+                time2 = {time: "1992/06"},
+                time3 = {time: "1992/06"};
 
             function onEachFeature (feature, layer) {
                 var content = "<div style='clear: both'></div><div><h4>" + feature.properties.title + "</h4><p>" + feature.properties.time + "</p><p>" + feature.properties.description + "</p></div>";
@@ -114,6 +119,7 @@
 //            var group1 = L.geoJSON(dataset1, optionsObject);
             var json1 = L.geoJSON(dataset1, event1);
             var json2 = L.geoJSON(dataset1, event2);
+            var json3 = L.geoJSON(dataset1, event2);
 //            var layer3 = L.geoJSON();
 
             // Create the second geoJSON layer from external file
@@ -134,18 +140,18 @@
                 layer1.options.time = time1.time;
                 layer2.options.time = time2.time;
 
-            var point1 = new L.LatLng(46.2309332, -119.1080419){
+            var point1 = new L.LatLng(46.2309332, -119.1080419,{
                     startime: "1992/01",
                     endtime: "1992/06"
-                },
-                point2 = new L.LatLng(46.2465524, -119.0977191){
+                }),
+                point2 = new L.LatLng(46.2465524, -119.0977191,{
                         startime: "1992/06",
                         endtime: "1992/07"
-                    },
-                point3 = new L.LatLng(-119.201977, 46.257038){
+                    }),
+                point3 = new L.LatLng(-119.201977, 46.257038,{
                         startime: "1992/07",
                         endtime: null
-                    },
+                    }),
                 line1List = [point1,point2],
                 line2List = [point2,point3];
 
@@ -155,11 +161,11 @@
                 line2 = new L.polyLine(line2List {
                     time: "1992/07"
                 }),
-                path1 = L.layerGroup([layer2, line1]{time:"1992/06"}),
-                path2 = L.layerGroup([layer3, line2]{time:"1992/07"});
+                path1 = L.layerGroup([json2, line1]{time:"1992/06"}),
+                path2 = L.layerGroup([json3, line2]{time:"1992/07"});
 
             // Create the layerGroup
-            var multiLayers = L.layerGroup([layer1,path2,path3]);
+            var multiLayers = L.layerGroup([json1,path2,path3]);
 
             // Set the sliderControl options
             var sliderControl1 = L.control.sliderControl( {
