@@ -103,7 +103,7 @@
 
             // Create the first geoJSON layer
 //            var group1 = L.geoJSON(dataset1, optionsObject);
-            var layer1 = L.geoJSON(dataset1, {filter: time1, optionsObject});
+            var layer1 = L.geoJSON(dataset1, {filter: time1});
             var layer2 = L.geoJSON();
 //            var layer3 = L.geoJSON();
 
@@ -124,7 +124,7 @@
                 };
 
             // Create the layerGroup
-            var multiLayers = L.layerGroup([layer1, layer2]);
+/*            var multiLayers = L.layerGroup([layer1, layer2]);
 
             // Set the sliderControl options
             var sliderControl1 = L.control.sliderControl( {
@@ -140,6 +140,8 @@
             // Initialize the slider
             sliderControl1.startSlider();
 //        });
+*/
+            layer1.addTo(map1);
         </script>
     </body>
 </html>
