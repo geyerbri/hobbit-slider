@@ -147,22 +147,22 @@
                 point2 = new L.LatLng(46.2465524, -119.0977191,{
                         startime: "1992/06",
                         endtime: "1992/07"
-                    }),
+                }),
                 point3 = new L.LatLng(-119.201977, 46.257038,{
                         startime: "1992/07",
                         endtime: null
-                    }),
+                }),
                 line1List = [point1,point2],
                 line2List = [point2,point3];
 
-            var line1 = new L.polyLine(line1List {
+            var line1 = new L.polyLine(line1List, {
                     time: "1992/06"
                 }),
-                line2 = new L.polyLine(line2List {
+                line2 = new L.polyLine(line2List, {
                     time: "1992/07"
                 }),
-                path1 = L.layerGroup([json2, line1]{time:"1992/06"}),
-                path2 = L.layerGroup([json3, line2]{time:"1992/07"});
+                path1 = L.layerGroup([json2, line1],{time:"1992/06"}),
+                path2 = L.layerGroup([json3, line2],{time:"1992/07"});
 
             // Create the layerGroup
             var multiLayers = L.layerGroup([json1,path2,path3]);
