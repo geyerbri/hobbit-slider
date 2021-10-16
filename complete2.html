@@ -103,8 +103,8 @@
 
             // Create the first geoJSON layer
 //            var group1 = L.geoJSON(dataset1, optionsObject);
-            var layer1 = L.geoJSON(dataset1, {filter: time1}, optionsObject);
-            var layer2 = L.geoJSON(dataset1, {filter: time2}, optionsObject);
+            var layer1 = L.geoJSON(dataset1, {filter: time1, onEachFeature});
+            var layer2 = L.geoJSON(dataset1, {filter: time2, onEachFeature});
 //            var layer3 = L.geoJSON();
 
             // Create the second geoJSON layer from external file
