@@ -1065,9 +1065,10 @@
 				layer.setIcon(L.icon(feature.properties.icon));
 				if (feature.properties.position === "start"){
 					layer.bindPopup(content, {minWidth: 400, autoPanPadding: [10,80], closeButton: true}).openPopup();
-				} else{
-					layer.bindPopup(content, {minWidth: 400, autoPanPadding: [10,80], closeButton: true});
-				};
+				}
+//				 else{
+//					layer.bindPopup(content, {minWidth: 400, autoPanPadding: [10,80], closeButton: true});
+//				};
 			};
 
 			var hobbit1 = L.geoJSON(hobbits, event1),
