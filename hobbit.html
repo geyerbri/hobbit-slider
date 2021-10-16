@@ -220,7 +220,6 @@
                 pointH = new L.LatLng(7.39515, -4.87793),
 				pointI = new L.LatLng(7.86447, -4.9021),
                 pointJ = new L.LatLng(7.15322, -6.97522),
-				pointK = new L.LatLng(6.90219, -12.27448),
 				point1 = new L.LatLng(6.90219, -12.20448),
 				point2 = new L.LatLng(6.62156, -11.70044),
 				point3 = new L.LatLng(7.20203, -10.05249),
@@ -1056,9 +1055,7 @@
 			 	hobbit7 = L.geoJSON(hobbits, event7),
 				hobbit8 = L.geoJSON(hobbits, event8),
 			 	hobbit9 = L.geoJSON(hobbits, event9),
-				hobbit10 = L.geoJSON(hobbits, event10),
-			 	hobbit11 = L.geoJSON(hobbits, event11),
-				hobbit12 = L.geoJSON(hobbits, event12);
+				hobbit10 = L.geoJSON(hobbits, event10);
 
 			var lotr1 = L.geoJSON(lotr, event1),
 			 	lotr2 = L.geoJSON(lotr, event2),
@@ -1124,8 +1121,6 @@
 			hobbit8.options.time = time8.time;
 			hobbit9.options.time = time9.time;
 			hobbit10.options.time = time10.time;
-			hobbit11.options.time = time11.time;
-			hobbit12.options.time = time12.time;
 
 			lotr1.options.time = time1.time;
 			lotr2.options.time = time2.time;
@@ -1150,7 +1145,7 @@
 				alphaPath7 = L.layerGroup([hobbit8,alphaLine7],{time:"08"}),
 				alphaPath8 = L.layerGroup([hobbit9,alphaLine8],{time:"09"}),
 				alphaPath9 = L.layerGroup([hobbit10,alphaLine9],{time:"10"}),
-				alphaPath10 = L.layerGroup([hobbit11,alphaLine10],{time:"11"});
+				alphaPath10 = L.layerGroup([alphaLine10],{time:"11"});
 
 			var numberPath1 = L.layerGroup([lotr2,numberLine1],{time:"02"}),
 			 	numberPath2 = L.layerGroup([lotr3,numberLine2],{time:"03"}),
@@ -1161,13 +1156,13 @@
 				numberPath7 = L.layerGroup([lotr8,numberLine7],{time:"08"}),
 				numberPath8 = L.layerGroup([lotr9,numberLine8],{time:"09"}),
 				numberPath9 = L.layerGroup([lotr10,numberLine9],{time:"10"}),
-				numberPath9 = L.layerGroup([lotr11,numberLine10],{time:"11"}),
-				numberPath9 = L.layerGroup([lotr12,numberLine11],{time:"12"}),
-				numberPath10 = L.layerGroup([lotr13,numberLine12],{time:"13"});
+				numberPath10 = L.layerGroup([lotr11,numberLine10],{time:"11"}),
+				numberPath11 = L.layerGroup([lotr12,numberLine11],{time:"12"}),
+				numberPath12 = L.layerGroup([lotr13,numberLine12],{time:"13"});
 
 			var alphaMultiLayers = L.layerGroup([hobbit1,alphaPath1,alphaPath2,alphaPath3,alphaPath4,alphaPath5,alphaPath6,alphaPath7,alphaPath8,alphaPath9,alphaPath10]);
 
-			var numberMultiLayers = L.layerGroup([lotr1,numberPath1,numberPath2,numberPath3,numberPath4,numberPath5,numberPath6,numberPath7,numberPath8,numberPath9,numberPath10]);
+			var numberMultiLayers = L.layerGroup([lotr1,numberPath1,numberPath2,numberPath3,numberPath4,numberPath5,numberPath6,numberPath7,numberPath8,numberPath9,numberPath10,numberPath11,numberPath12]);
 
 			// Set the sliderControl options
             var sliderControl1 = L.control.sliderControl( {
