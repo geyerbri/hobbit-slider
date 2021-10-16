@@ -93,16 +93,17 @@
 
             // Write up the functions for using the geoJSON data to produce popups for each marker
 
-            var time1 = {
-                filter: time1,
-                onEachFeature,
-                "time": "1992/07"
+            var event1 = {
+                filter: event1,
+                onEachFeature
             };
-            var time2 = {
-                filter: time2,
-                onEachFeature,
-                "time": "1992/01"
+            var event2 = {
+                filter: event2,
+                onEachFeature
             };
+
+            var time1 = "1992/01",
+                time2 = "1992/06";
 
             function onEachFeature (feature, layer) {
                 var content = "<div style='clear: both'></div><div><h4>" + feature.properties.title + "</h4><p>" + feature.properties.time + "</p><p>" + feature.properties.description + "</p></div>";
@@ -111,8 +112,8 @@
 
             // Create the first geoJSON layer
 //            var group1 = L.geoJSON(dataset1, optionsObject);
-            var layer1 = L.geoJSON(dataset1, time1);
-            var layer2 = L.geoJSON(dataset1, time2);
+            var layer1 = L.geoJSON(dataset1, event1);
+            var layer2 = L.geoJSON(dataset1, event2);
 //            var layer3 = L.geoJSON();
 
             // Create the second geoJSON layer from external file
@@ -125,10 +126,10 @@
 //            layer3.options.time = "1992/06";
 
                 function time1(feature){
-                    if (feature.properties.time === layer1.options.time) return true
+                    if (feature.properties.time === time1) return true
                 };
                 function time2(feature){
-                    if (feature.properties.time === layer2.options.time) return true
+                    if (feature.properties.time === time2) return true
                 };
 
             // Create the layerGroup
